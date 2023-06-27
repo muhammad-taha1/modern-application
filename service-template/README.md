@@ -7,6 +7,6 @@ enforce package structure based on hexagonal architecture and a docker compose f
 
 ## How to generate service from service template
 
-Simply run `./generate-service.sh` while under project's root directory. You will be asked to enter groupId and artifactId of the project. Once completed, 
+Simply run `./generate-service.sh` from project's root directory. You will be asked to enter groupId and artifactId for the new project. Once completed, 
 a new project will be created in the directory above.
 

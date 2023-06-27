@@ -9,7 +9,7 @@ read ARTIFACT_ID
 
 mvn clean install -U -DskipTests
 
-mvn archetype:create-from-project  -Dinteractive=false -DkeepParent=true -DpackageName="$GROUP_ID" -DgroupId="$GROUP_ID" -DartifactId="$ARTIFACT_ID" -DarchetypeVersion=1.0.0-SNAPSHOT -Darchetype.filteredExtentions="txt"
+mvn archetype:create-from-project  -Dinteractive=false -DkeepParent=true -DpackageName="$GROUP_ID" -DgroupId="$GROUP_ID" -DartifactId="$ARTIFACT_ID" -DarchetypeVersion=1.0.0-SNAPSHOT -Darchetype.filteredExtentions="txt,properties"
 
 
 cd ./target/generated-sources/archetype

@@ -3,7 +3,7 @@ package com.modern.app;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackages = {"com.modern.app"})
+@SpringBootApplication
 public class Application {
 
     public static void main(String[] args) {
