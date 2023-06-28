@@ -31,5 +31,3 @@ cp README.txt README.md
 rm README.txt
 rm generate-service.sh
 
-mvn clean install -U -DskipTests
-
