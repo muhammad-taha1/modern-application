@@ -37,3 +37,4 @@ Due to severe symptoms of laziness, most of the stories in the project have no d
 
 
 ### 4. Write test scenarios and code based on story details and event model
+The technical details and approach of development for this project will be captured in a medium articles.  
