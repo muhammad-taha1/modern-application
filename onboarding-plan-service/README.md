@@ -1,8 +1,7 @@
 # onboarding-plan-service
 
 ## Service responsibility
-**TODO**: Add a small description about the service
-
+This service handles everything about onboarding plans
 
 ## Code architecture
 This service follows the hexagonal code architecture, where domain logic needs to reside under *Domain* package, input and output ports under *Application* package and all infrastructure code (framework usage, calls to external services) should reside under *Infrastructure* package.

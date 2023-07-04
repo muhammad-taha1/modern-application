@@ -7,13 +7,13 @@ Assist in making a new hire's onboarding journey easy and trackable. The app sho
 - Each team can have admin(s), who would manage onboarding resources and create onboarding plans for their team
 - a team can have multiple onboarding plans
 - onboarding plan consists of several tasks, and each task is broken down into steps about a particular thing the new hire needs to do. E.g. Setting up desktop can be a task, where the steps can be: install VSCode, install postman etc
-- a step can have description, title, links, pdf attachments, ability to be checked off
+- a step can have description, title and ability to be checked off
 - system should track completion of onboarding plan & task automatically
 - email new hire when an onboarding plan gets assigned to them with due date
 - email new hire, POC + team owner when new hire completes onboarding and if onboarding due date has passed
-- email new hire if something changes in their onboarding plan after they have been assigned to it
+- individuals should only work on the onboarding plan assigned to them at that point in time. No further changes to their onboarding plan after assignment.
 - may need to support other notification types (mobile push) in addition to emails in future
-- Same onboarding plan can be completed by many people simultaneously, or different points in time
+- Same onboarding plan can be completed by many people simultaneously, or at different points in time
 
 
 

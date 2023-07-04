@@ -40,14 +40,14 @@ public class OnboardingPlanAssignmentService implements OnboardingPlanAssignment
                 onboardingPlan.tasks(),
                 dueDate);
 
-        onboardingPlanAssignmentRepository.save(assignedOnboardingPlan);
+        String id = onboardingPlanAssignmentRepository.save(assignedOnboardingPlan);
 
         onboardingPlanAssignmentNotification.notifyRelevantParties(
                 NotificationType.ONBOARDING_PLAN_ASSIGNED,
                 assignedOnboardingPlan.getOnboardingPlanId(),
                 List.of(assignedOnboardingPlan.getAssigneeId()));
 
-        return assignedOnboardingPlan.getId();
+        return id;
     }
 
     @Override

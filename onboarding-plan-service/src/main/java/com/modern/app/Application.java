@@ -6,7 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@OpenAPIDefinition(info = @Info(title = "service-template"))
+@OpenAPIDefinition(info = @Info(title = "onboarding-plan-service"))
 public class Application {
 
     public static void main(String[] args) {
