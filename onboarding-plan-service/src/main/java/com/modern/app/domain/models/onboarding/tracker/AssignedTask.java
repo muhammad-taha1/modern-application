@@ -2,6 +2,7 @@ package com.modern.app.domain.models.onboarding.tracker;
 
 import com.modern.app.domain.models.onboarding.plan.Step;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -11,6 +12,12 @@ public class AssignedTask {
     private List<AssignedStep> assignedSteps;
     private String taskName;
     private boolean isCompleted;
+
+    public AssignedTask(List<AssignedStep> assignedSteps, String taskName, boolean isCompleted) {
+        this.assignedSteps = assignedSteps;
+        this.taskName = taskName;
+        this.isCompleted = isCompleted;
+    }
 
     public AssignedTask(List<Step> steps, String taskName) {
         this.taskName = taskName;

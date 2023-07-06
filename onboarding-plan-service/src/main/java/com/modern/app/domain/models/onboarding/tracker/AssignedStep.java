@@ -12,6 +12,12 @@ public class AssignedStep {
 
     private boolean isCompleted;
 
+    public AssignedStep(String title, String instructions, boolean isCompleted) {
+        this.title = title;
+        this.instructions = instructions;
+        this.isCompleted = isCompleted;
+    }
+
     public AssignedStep(String title, String instructions) {
         this.title = title;
         this.instructions = instructions;

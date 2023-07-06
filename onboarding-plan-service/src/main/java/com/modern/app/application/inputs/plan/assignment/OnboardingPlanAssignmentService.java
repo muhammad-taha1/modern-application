@@ -7,10 +7,13 @@ import com.modern.app.application.outputs.OnboardingPlanRepository;
 import com.modern.app.domain.exceptions.OnboardingPlanException;
 import com.modern.app.domain.models.onboarding.plan.OnboardingPlan;
 import com.modern.app.domain.models.onboarding.tracker.AssignedOnboardingPlan;
+import org.apache.logging.log4j.util.Strings;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 
+@Service
 public class OnboardingPlanAssignmentService implements OnboardingPlanAssignment {
 
     private OnboardingPlanRepository onboardingPlanRepository;
@@ -51,7 +54,7 @@ public class OnboardingPlanAssignmentService implements OnboardingPlanAssignment
     }
 
     @Override
-    public boolean isDue(long assignedOnboardingPlanId) {
+    public boolean isDue(String assignedOnboardingPlanId) throws OnboardingPlanException {
         AssignedOnboardingPlan assignedOnboardingPlan = onboardingPlanAssignmentRepository.getById(assignedOnboardingPlanId);
         boolean isDue = assignedOnboardingPlan.isDue();
 
@@ -66,7 +69,7 @@ public class OnboardingPlanAssignmentService implements OnboardingPlanAssignment
     }
 
     @Override
-    public void completeSteps(long assignedOnboardingPlanId, List<String> stepNames, String taskName) {
+    public void completeSteps(String assignedOnboardingPlanId, List<String> stepNames, String taskName) throws OnboardingPlanException {
         AssignedOnboardingPlan assignedOnboardingPlan = onboardingPlanAssignmentRepository.getById(assignedOnboardingPlanId);
         assignedOnboardingPlan.completeSteps(stepNames, taskName);
 
@@ -78,5 +81,10 @@ public class OnboardingPlanAssignmentService implements OnboardingPlanAssignment
         }
 
         onboardingPlanAssignmentRepository.save(assignedOnboardingPlan);
+    }
+
+    @Override
+    public AssignedOnboardingPlan getAssignedOnboardingPlanById(String assignedOnboardingPlanId) throws OnboardingPlanException {
+        return onboardingPlanAssignmentRepository.getById(assignedOnboardingPlanId);
     }
 }

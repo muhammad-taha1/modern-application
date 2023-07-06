@@ -59,9 +59,9 @@ public class OnboardingPlanAssignmentServiceTest {
     }
 
     @Test
-    void isDueShouldReturnTrueAndNotifyRelevantPartiesWhenPlanIsDue() {
+    void isDueShouldReturnTrueAndNotifyRelevantPartiesWhenPlanIsDue() throws OnboardingPlanException {
         // Arrange
-        long assignedOnboardingPlanId = 1;
+        String assignedOnboardingPlanId = "1";
         AssignedOnboardingPlan assignedOnboardingPlan = mock(AssignedOnboardingPlan.class);
         when(assignedOnboardingPlan.isDue()).thenReturn(true);
         when(onboardingPlanAssignmentRepository.getById(assignedOnboardingPlanId)).thenReturn(assignedOnboardingPlan);
@@ -83,9 +83,9 @@ public class OnboardingPlanAssignmentServiceTest {
     }
 
     @Test
-    void isDueShouldReturnFalseWhenPlanIsNotDue() {
+    void isDueShouldReturnFalseWhenPlanIsNotDue() throws OnboardingPlanException {
         // Arrange
-        long assignedOnboardingPlanId = 1;
+        String assignedOnboardingPlanId = "1";
         AssignedOnboardingPlan assignedOnboardingPlan = mock(AssignedOnboardingPlan.class);
         when(assignedOnboardingPlan.isDue()).thenReturn(false);
         when(onboardingPlanAssignmentRepository.getById(assignedOnboardingPlanId)).thenReturn(assignedOnboardingPlan);
@@ -99,9 +99,9 @@ public class OnboardingPlanAssignmentServiceTest {
     }
 
     @Test
-    void completeStepsShouldCompleteStepsAndNotifyRelevantPartiesWhenPlanIsCompleted() {
+    void completeStepsShouldCompleteStepsAndNotifyRelevantPartiesWhenPlanIsCompleted() throws OnboardingPlanException {
         // Arrange
-        long assignedOnboardingPlanId = 1;
+        String assignedOnboardingPlanId = "1";
         List<String> stepNames = List.of("Step 1", "Step 2");
         String taskName = "Task 1";
         AssignedOnboardingPlan assignedOnboardingPlan = mock(AssignedOnboardingPlan.class);
@@ -126,9 +126,9 @@ public class OnboardingPlanAssignmentServiceTest {
     }
 
     @Test
-    void completeStepsShouldCompleteStepsButNotNotifyRelevantPartiesWhenPlanIsNotCompleted() {
+    void completeStepsShouldCompleteStepsButNotNotifyRelevantPartiesWhenPlanIsNotCompleted() throws OnboardingPlanException {
         // Arrange
-        long assignedOnboardingPlanId = 1;
+        String assignedOnboardingPlanId = "1";
         List<String> stepNames = List.of("Step 1", "Step 2");
         String taskName = "Task 1";
         AssignedOnboardingPlan assignedOnboardingPlan = mock(AssignedOnboardingPlan.class);

@@ -9,6 +9,8 @@ import java.util.*;
 @Getter
 public class AssignedOnboardingPlan {
 
+    private String id;
+
     private final long assigneeId;
     private final String onboardingPlanId;
 
@@ -30,6 +32,18 @@ public class AssignedOnboardingPlan {
         this.assignedTasks = mapTasksToAssignedTasks(tasks);
         this.dueDate = dueDate;
         this.assignerId = assignerId;
+        this.id = UUID.randomUUID().toString();
+    }
+
+    public AssignedOnboardingPlan(String id, long assigneeId, String onboardingPlanId, boolean isPlanCompleted, long pointOfContactId, long assignerId, List<AssignedTask> assignedTasks, LocalDate dueDate) {
+        this.id = id;
+        this.assigneeId = assigneeId;
+        this.onboardingPlanId = onboardingPlanId;
+        this.isPlanCompleted = isPlanCompleted;
+        this.pointOfContactId = pointOfContactId;
+        this.assignerId = assignerId;
+        this.assignedTasks = assignedTasks;
+        this.dueDate = dueDate;
     }
 
     private List<AssignedTask> mapTasksToAssignedTasks(List<Task> tasks) {
@@ -53,4 +67,5 @@ public class AssignedOnboardingPlan {
     public boolean isDue() {
         return LocalDate.now().isAfter(dueDate);
     }
+
 }
