@@ -56,16 +56,7 @@ public class OnboardingPlanAssignmentService implements OnboardingPlanAssignment
     @Override
     public boolean isDue(String assignedOnboardingPlanId) throws OnboardingPlanException {
         AssignedOnboardingPlan assignedOnboardingPlan = onboardingPlanAssignmentRepository.getById(assignedOnboardingPlanId);
-        boolean isDue = assignedOnboardingPlan.isDue();
-
-        if (isDue) {
-            onboardingPlanAssignmentNotification.notifyRelevantParties(
-                    NotificationType.ONBOARDING_PLAN_OVERDUE,
-                    assignedOnboardingPlan.getOnboardingPlanId(),
-                    List.of(assignedOnboardingPlan.getAssignerId(), assignedOnboardingPlan.getAssigneeId(), assignedOnboardingPlan.getPointOfContactId()));
-        }
-
-        return isDue;
+        return assignedOnboardingPlan.isDue();
     }
 
     @Override

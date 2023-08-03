@@ -71,15 +71,6 @@ public class OnboardingPlanAssignmentServiceTest {
 
         // Assert
         assertTrue(isDue);
-        verify(onboardingPlanAssignmentNotification).notifyRelevantParties(
-                NotificationType.ONBOARDING_PLAN_OVERDUE,
-                assignedOnboardingPlan.getOnboardingPlanId(),
-                List.of(
-                        assignedOnboardingPlan.getAssignerId(),
-                        assignedOnboardingPlan.getAssigneeId(),
-                        assignedOnboardingPlan.getPointOfContactId()
-                )
-        );
     }
 
     @Test
