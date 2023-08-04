@@ -37,4 +37,5 @@ Due to severe symptoms of laziness, most of the stories in the project have no d
 
 
 ### 4. Write test scenarios and code based on story details and event model
-The technical details and approach of development for this project will be captured in a medium articles.  
+Have a look at the following series of medium articles, which covers in detail the idealogy behind the development of this application, along with details on testing:
+https://medium.com/@muhammad.taha/list/designing-modern-applications-542ceed3e64f
