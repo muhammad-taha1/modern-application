@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notification-service
+spec:
+  selector:
+    matchLabels:
+      app: notification-service  
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: notification-service
+    spec:
+      containers:
+      - name: notification-service
+        image: modern-app/notification-service
+        imagePullPolicy: Never
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
+        env:
+          - name: mongo_user
+            valueFrom:
+              secretKeyRef:
+                name: mongo-creds
+                key: username
+          - name: mongo_pwd
+            valueFrom:
+              secretKeyRef:
+                key: password
+                name: mongo-creds
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: notification-service
+spec:
+  selector:
+    app: notification-service-app
+  ports:
+  - port: 8080
+    targetPort: 8080
+  type: LoadBalancer
+
