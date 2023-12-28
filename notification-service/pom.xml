@@ -94,6 +94,7 @@
                 <targetPath>${project.build.outputDirectory}</targetPath>
                 <includes>
                     <include>application.properties</include>
+                    <include>application-prod.properties</include>
                 </includes>
             </resource>
         </resources>
@@ -103,10 +104,10 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <executions>
                     <execution>
-<!--                        <id>pre-integration-test</id>-->
-<!--                        <goals>-->
-<!--                            <goal>start</goal>-->
-<!--                        </goals>-->
+                        <id>pre-integration-test</id>
+                        <goals>
+                            <goal>start</goal>
+                        </goals>
                     </execution>
                     <execution>
                         <id>post-integration-test</id>

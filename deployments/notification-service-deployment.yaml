@@ -16,10 +16,6 @@ spec:
       - name: notification-service
         image: modern-app/notification-service
         imagePullPolicy: Never
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         ports:
         - containerPort: 8080
         env:
