@@ -5,7 +5,7 @@ metadata:
   labels:
     app: zookeeper
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: zookeeper
@@ -20,10 +20,6 @@ spec:
           ports:
             - containerPort: 2181
               name: client
-            - containerPort: 2888
-              name: follower
-            - containerPort: 3888
-              name: election
           env:
             - name: ZOOKEEPER_CLIENT_PORT
               value: "2181"
@@ -42,10 +38,4 @@ spec:
     - protocol: TCP
       port: 2181
       name: client
-    - port: 2888
-      protocol: TCP
-      name: follower
-    - port: 3888
-      name: election
-      protocol: TCP
   type: NodePort

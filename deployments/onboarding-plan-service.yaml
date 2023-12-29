@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: notification-service
+  name: onboarding-plan-service
 spec:
   selector:
     matchLabels:
-      app: notification-service  
+      app: onboarding-plan-service
   replicas: 2
   template:
     metadata:
       labels:
-        app: notification-service
+        app: onboarding-plan-service
     spec:
       containers:
-      - name: notification-service
-        image: modern-app/notification-service
+      - name: onboarding-plan-service
+        image: modern-app/onboarding-plan-service
         imagePullPolicy: Never
         ports:
-        - containerPort: 8081
+        - containerPort: 8080
         env:
           - name: mongo_user
             valueFrom:
@@ -33,12 +33,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: notification-service
+  name: onboarding-plan-service
 spec:
   selector:
-    app: notification-service
+    app: onboarding-plan-service
   ports:
-  - port: 8081
+  - port: 8080
     targetPort: 8080
   type: LoadBalancer
 

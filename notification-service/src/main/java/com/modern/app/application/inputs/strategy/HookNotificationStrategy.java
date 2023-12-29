@@ -11,10 +11,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-@Component
+@Component("HOOK")
 public class HookNotificationStrategy implements NotificationStrategy {
 
     private HookNotificationSender hookNotificationSender;
+
+    public HookNotificationStrategy(HookNotificationSender hookNotificationSender) {
+        this.hookNotificationSender = hookNotificationSender;
+    }
+
 
     @Override
     public String getContent(NotificationConfig notificationConfig, InboundEvent inboundEvent) {

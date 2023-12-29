@@ -1,6 +1,7 @@
 package com.modern.app.application.inputs;
 
 import com.modern.app.application.outputs.NotificationConfigRepository;
+import com.modern.app.domain.models.notification.Notification;
 import com.modern.app.domain.models.notification.NotificationStrategy;
 import com.modern.app.domain.models.notification.configuration.NotificationConfig;
 import com.modern.app.domain.models.notification.event.InboundEvent;
