@@ -4,6 +4,11 @@ This project is an attempt at deciphering the methodologies and approach on how 
 the best practices and standards across the industry, from requirements analysis to design to code. The methodology is summarized in this readme, which will explain and lead you 
 to other files and directories in this project.
 
+The entire process from discovering the requirements to building the system out is covered in the following series of articles:
+https://medium.com/@muhammad.taha/list/designing-modern-applications-542ceed3e64f
+
+
+
 ## The Approach
 The requirements for the software are listed [here](./requirements.md). We can assume that these requirements are specific to one or more epics. From the requirements we go to event modelling and discovery, attempting to define the core domain and behvior around the requirements. From the event storming model, we can proceed to create C4 diagrams or UML diagrams as required and also create user stories for each epic. And from those stories we create test scenarios, which should be easy to envision at this point based on story description and event model. Final step is to write code, and a TDD approach can be easily taken here. In short, the approach here:
 

@@ -17,7 +17,7 @@ spec:
         image: modern-app/onboarding-plan-service
         imagePullPolicy: Never
         ports:
-        - containerPort: 8080
+        - containerPort: 8082
         env:
           - name: mongo_user
             valueFrom:
@@ -38,7 +38,7 @@ spec:
   selector:
     app: onboarding-plan-service
   ports:
-  - port: 8080
+  - port: 8082
     targetPort: 8080
   type: LoadBalancer
 
